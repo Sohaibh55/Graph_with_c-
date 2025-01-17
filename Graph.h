@@ -7,16 +7,17 @@
 
 #include <iostream>
 #include <vector>
+#include <assert.h>
+#include <cassert>
 using namespace std;
 class Graph
 {
   private:
      vector<vector<int>> graph;
 public:
-    Graph();
-    void insert(int value);
-
-
+    Graph(int size);
+    void insert(int u,int v,int distance,bool allow);
+    void display();
 };
 
 
