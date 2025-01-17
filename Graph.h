@@ -8,7 +8,7 @@
 #include <iostream>
 #include <vector>
 #include <assert.h>
-#include <cassert>
+#include <queue>
 using namespace std;
 class Graph
 {
@@ -18,6 +18,7 @@ public:
     Graph(int size);
     void insert(int u,int v,int distance,bool allow);
     void display();
+    void BFS(int start_index); // Breadth First Search
 };
 
 

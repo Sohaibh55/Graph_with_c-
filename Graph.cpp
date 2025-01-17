@@ -19,3 +19,26 @@ void Graph::display() {
         cout<<endl;
     }
 }
+void Graph::BFS(int start_index) {
+
+    vector<bool> visited_index(graph.size(),false);
+    queue<int> queue;
+    queue.push(start_index);
+    visited_index[start_index] = true;
+    cout << "BFS traversal starting from node " << start_index << ": ";
+
+    while ( !queue.empty() ) {
+
+        cout<<queue.front()<<" ";
+        start_index = queue.front();
+        queue.pop();
+
+      for (int i = 0 ; i <graph.size() ; i++) {
+          if ( !visited_index[i] && graph[start_index][i] != 0)
+          {
+              queue.push(i);
+              visited_index[i] = true;
+          }
+      }
+    }
+}
