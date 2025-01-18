@@ -41,4 +41,25 @@ void Graph::BFS(int start_index) {
           }
       }
     }
+    cout<<endl;
+}
+void Graph::REC_DFS(vector<bool> &visited_state,int start_index) {
+
+    cout<<start_index<<' ';
+    visited_state[start_index] = true;
+
+    for (int i = 0 ; i < graph.size() ; i++) {
+        if (!visited_state[i] && graph[start_index][i] != 0)
+            REC_DFS(visited_state,i);
+    }
+}
+void Graph::DFS() {
+
+    vector<bool> visited_state (graph.size(),false);
+    cout<<" DFS Traversal : ";
+    for (int i = 0 ; i < graph.size() ; i++) {
+        if (!visited_state[i])
+            REC_DFS(visited_state,i);
+    }
+    cout<<endl;
 }

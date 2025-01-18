@@ -19,6 +19,8 @@ public:
     void insert(int u,int v,int distance,bool allow);
     void display();
     void BFS(int start_index); // Breadth First Search
+    void DFS();
+    void REC_DFS(vector<bool>& visited_state,int start_index);
 };
 
 

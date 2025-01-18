@@ -15,6 +15,7 @@ int main() {
 
     graph.display();
     graph.BFS(3);
+    graph.DFS();
 
 
 
