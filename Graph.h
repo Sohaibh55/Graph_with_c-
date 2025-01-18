@@ -9,18 +9,23 @@
 #include <vector>
 #include <assert.h>
 #include <queue>
+#include <stack>
 using namespace std;
 class Graph
 {
   private:
-     vector<vector<int>> graph;
-public:
+     vector<vector<pair<int,int>>> graph;
+  public:
     Graph(int size);
     void insert(int u,int v,int distance,bool allow);
     void display();
     void BFS(int start_index); // Breadth First Search
     void DFS();
     void REC_DFS(vector<bool>& visited_state,int start_index);
+    int min_index(vector<int>& Distance,vector<bool>& visited_state);
+    void print(vector<int>& Distance);
+    void dijkstra(int start_index);
+
 };
 
 
